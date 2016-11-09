@@ -74,6 +74,7 @@ function filterOutReservedFunctions(reserved, options) {
 function requestToJSON() {
   var self = this
   return {
+
     uri: self.uri,
     method: self.method,
     headers: self.headers
@@ -84,7 +85,9 @@ function requestToJSON() {
 function responseToJSON() {
   var self = this
   return {
+	httpVersion: self.httpVersion,
     statusCode: self.statusCode,
+    statusMessage: self.statusMessage,
     body: self.body,
     headers: self.headers,
     request: requestToJSON.call(self.request)
